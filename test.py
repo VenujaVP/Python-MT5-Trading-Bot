@@ -41,7 +41,7 @@ if orders:
         ])
 
     headers = ["Ticket", "Symbol", "Volume", "Price", "Type", "Magic", "Comment"]
-    print(tabulate(order_list, headers=headers, tablefmt="grid"))
+    # print(tabulate(order_list, headers=headers, tablefmt="grid"))
 else:
     print("No pending orders found.")
 
@@ -58,8 +58,28 @@ if positions:
         ])
 
     headers = ["Ticket", "Symbol", "Volume", "Open Price", "Current Price", "Type", "Profit", "Comment"]
-    print(tabulate(position_list, headers=headers, tablefmt="grid"))
+    # print(tabulate(position_list, headers=headers, tablefmt="grid"))
 else:
     print("No open positions found.")
 
-# 
+
+# Sends a trade request (e.g., open/close orders, modify orders).
+
+# Example (placing a buy market order):
+request = {
+    "action": mt5.TRADE_ACTION_DEAL,
+    "symbol": "EURUSD",
+    "volume": 0.1,
+    "type": mt5.ORDER_TYPE_BUY,
+    "price": mt5.symbol_info_tick("EURUSD").ask,
+    "deviation": 10,
+    "magic": 123456,
+    "comment": "Python script open",
+    "type_time": mt5.ORDER_TIME_GTC,
+    "type_filling": mt5.ORDER_FILLING_IOC,
+}
+result = mt5.order_send(request)
+print(result)
+
+# Cancels a pending order by its ticket number.
+mt5.order_cancel(ticket=123456)
