@@ -75,7 +75,7 @@ if tick_info is None:
     print(f"Failed to retrieve tick info for {symbol}")
     mt5.shutdown()
     quit()
-    
+
 request = {
     "action": mt5.TRADE_ACTION_DEAL,
     "symbol": symbol,
