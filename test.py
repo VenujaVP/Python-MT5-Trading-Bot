@@ -66,20 +66,53 @@ else:
 # Sends a trade request (e.g., open/close orders, modify orders).
 
 # Example (placing a buy market order):
+
+# Prepare the trade request
+symbol = "EURUSD"
+tick_info = mt5.symbol_info_tick(symbol)
+
+if tick_info is None:
+    print(f"Failed to retrieve tick info for {symbol}")
+    mt5.shutdown()
+    quit()
+    
 request = {
     "action": mt5.TRADE_ACTION_DEAL,
-    "symbol": "EURUSD",
+    "symbol": symbol,
     "volume": 0.1,
     "type": mt5.ORDER_TYPE_BUY,
-    "price": mt5.symbol_info_tick("EURUSD").ask,
+    "price": tick_info.ask,
     "deviation": 10,
     "magic": 123456,
     "comment": "Python script open",
     "type_time": mt5.ORDER_TIME_GTC,
     "type_filling": mt5.ORDER_FILLING_IOC,
 }
+
+# Send the order
 result = mt5.order_send(request)
-print(result)
+
+# Display the result in a structured format
+if result.retcode == mt5.TRADE_RETCODE_DONE:
+    order_data = [
+        ["Order Ticket", result.order],
+        ["Symbol", symbol],
+        ["Volume", request["volume"]],
+        ["Open Price", request["price"]],
+        ["Deviation", request["deviation"]],
+        ["Magic Number", request["magic"]],
+        ["Comment", request["comment"]],
+        ["Execution Result", "Order placed successfully! ✅"],
+    ]
+else:
+    order_data = [
+        ["Order Ticket", result.order],
+        ["Symbol", symbol],
+        ["Error Code", result.retcode],
+        ["Error Description", "Order failed ❌"],
+    ]
+
+print(tabulate(order_data, tablefmt="grid"))
 
 # Cancels a pending order by its ticket number.
 mt5.order_cancel(ticket=123456)
