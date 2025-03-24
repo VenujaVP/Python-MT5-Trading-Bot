@@ -171,7 +171,6 @@ def delete_pending(ticket):
     else:
         print(f"Delete complete for ticket {ticket}...")
 
-
 # Close all pending orders for a given symbol
 def close_all_pending(symbol):
     # Get all pending orders for the symbol
