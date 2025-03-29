@@ -207,21 +207,30 @@ class Bot:
                     margin_b = self.cal_buy_margin(self.symbol)
 
                     if margin_s > 0:
-                        pct_profit_sell = self.cal_sell_pct_profit(self.symbol)
-                        if pct_profit_sell >= self.profit_target:
-                            self.close_all(self.symbol)
-                            print("Sell positions closed")
+                        try:
+                            pct_profit_sell = self.cal_sell_pct_profit(self.symbol)
+                            if pct_profit_sell >= self.profit_target:
+                                self.close_all(self.symbol)
+                                print("Sell positions closed")
+                        except:
+                            pass
+
 
                     # Check if there are active buy positions
                     if margin_b > 0:
-                        pct_profit_buy = self.cal_buy_pct_profit(self.symbol)
-                        if pct_profit_buy >= self.profit_target:
-                            self.close_all(self.symbol)
-                            print("Buy positions closed")
+                        try:
+                            pct_profit_buy = self.cal_buy_pct_profit(self.symbol)
+                            if pct_profit_buy >= self.profit_target:
+                                self.close_all(self.symbol)
+                                print("Buy positions closed")
+                        except:
+                            pass
                     
                     positions = mt5.positions_get(symbol=self.symbol)
-                    
                     if len(positions) == 0:
-                        self.close_all_pending(self.symbol)
-                        print("All positions closed")
-                        break  # Exit the loop
+                        try:
+                            self.close_all_pending(self.symbol)
+                            print("All positions closed")
+                            break  # Exit the loop
+                        except:
+                            pass
