@@ -175,7 +175,7 @@ class Bot:
 
     def drow_grid(self, symbol, volume, no_of_levels):
         pct_change_sell = 1
-        tick = mt5.symbol_info_tick(symbol)
+        tick = mt5.symbol_info_tick(self.symbol)
         current_price_sell = tick.bid
 
         for i in range(no_of_levels):
