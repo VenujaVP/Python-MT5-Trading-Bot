@@ -35,7 +35,7 @@ import tkinter as tk
 
 window = tk.Tk()
 window.title("Trading Bot")
-window.configure(bg='black')
+window.configure(bg='#2C3E50')
 window.resizable(False, False)
 window.geometry("450x750")
 
@@ -99,47 +99,53 @@ def run_bot3():
     thread  = Thread(target=bot3.run)
     thread.start()       
 
-login_label = tk.Label(window, text="Login", bg='black', fg='white')
-login_entry = tk.Entry(window, textvariable=login_var, bg='black', fg='white')
-password_label = tk.Label(window, text="password", bg='black', fg='white')
-password_entry = tk.Entry(window, textvariable=password_var, bg='black', fg='white')
-server_label = tk.Label(window, text="server", bg='black', fg='white')
-server_entry = tk.Entry(window, textvariable=server_var, bg='black', fg='white')
-initialize_button = tk.Button(window, text="Initialize", command=initialize, bg='black', fg='white')
+# -------------------------------------------------------------------------------------
 
-#bot1
-symbol_bot1_label = tk.Label(window, text="Symbol", bg='black', fg='white')
-symbol_bot1_entry = tk.Entry(window, textvariable=bot1_symbol, bg='black', fg='white')
-volume_bot1_label = tk.Label(window, text="Volume", bg='black', fg='white')
-volume_bot1_entry = tk.Entry(window, textvariable=bot1_volume, bg='black', fg='white')
-no_of_level_bot1_label = tk.Label(window, text="No Of Levels", bg='black', fg='white')
-no_of_level_bot1_entry = tk.Entry(window, textvariable=bot1_no_of_levels, bg='black', fg='white')
-profit_target_bot1_label = tk.Label(window, text="Profit Target", bg='black', fg='white')
-profit_target_bot1_entry = tk.Entry(window, textvariable=bot1_profit_target, bg='black', fg='white')
-bot1_run_button = tk.Button(window, text="Run Bot 1", command=run_bot1, bg='black', fg='white')
 
-#bot2
-symbol_bot2_label = tk.Label(window, text="Symbol", bg='black', fg='white')
-symbol_bot2_entry = tk.Entry(window, textvariable=bot2_symbol, bg='black', fg='white')
-volume_bot2_label = tk.Label(window, text="Volume", bg='black', fg='white')
-volume_bot2_entry = tk.Entry(window, textvariable=bot2_volume, bg='black', fg='white')
-no_of_level_bot2_label = tk.Label(window, text="No Of Levels", bg='black', fg='white')
-no_of_level_bot2_entry = tk.Entry(window, textvariable=bot2_no_of_levels, bg='black', fg='white')
-profit_target_bot2_label = tk.Label(window, text="Profit Target", bg='black', fg='white')
-profit_target_bot2_entry = tk.Entry(window, textvariable=bot2_profit_target, bg='black', fg='white')
-bot2_run_button = tk.Button(window, text="Run Bot 2", command=run_bot2, bg='black', fg='white')
+# Login Section
+login_label = tk.Label(window, text="Login", bg='#2C3E50', fg='#ECF0F1')
+login_entry = tk.Entry(window, textvariable=login_var, bg='#FFFFFF', fg='#000000')
+password_label = tk.Label(window, text="Password", bg='#2C3E50', fg='#ECF0F1')
+password_entry = tk.Entry(window, textvariable=password_var, bg='#FFFFFF', fg='#000000')
+server_label = tk.Label(window, text="Server", bg='#2C3E50', fg='#ECF0F1')
+server_entry = tk.Entry(window, textvariable=server_var, bg='#FFFFFF', fg='#000000')
+initialize_button = tk.Button(window, text="Initialize", command=initialize, bg='#1ABC9C', fg='#FFFFFF')
 
-#bot3
-symbol_bot3_label = tk.Label(window, text="Symbol", bg='black', fg='white')
-symbol_bot3_entry = tk.Entry(window, textvariable=bot3_symbol, bg='black', fg='white')
-volume_bot3_label = tk.Label(window, text="Volume", bg='black', fg='white')
-volume_bot3_entry = tk.Entry(window, textvariable=bot3_volume, bg='black', fg='white')
-no_of_level_bot3_label = tk.Label(window, text="No Of Levels", bg='black', fg='white')
-no_of_level_bot3_entry = tk.Entry(window, textvariable=bot3_no_of_levels, bg='black', fg='white')
-profit_target_bot3_label = tk.Label(window, text="Profit Target", bg='black', fg='white')
-profit_target_bot3_entry = tk.Entry(window, textvariable=bot3_profit_target, bg='black', fg='white')
-bot3_run_button = tk.Button(window, text="Run Bot 3", command=run_bot3, bg='black', fg='white')
+# Bot 1 Section
+symbol_bot1_label = tk.Label(window, text="Symbol", bg='#2C3E50', fg='#ECF0F1')
+symbol_bot1_entry = tk.Entry(window, textvariable=bot1_symbol, bg='#FFFFFF', fg='#000000')
+volume_bot1_label = tk.Label(window, text="Volume", bg='#2C3E50', fg='#ECF0F1')
+volume_bot1_entry = tk.Entry(window, textvariable=bot1_volume, bg='#FFFFFF', fg='#000000')
+no_of_level_bot1_label = tk.Label(window, text="No Of Levels", bg='#2C3E50', fg='#ECF0F1')
+no_of_level_bot1_entry = tk.Entry(window, textvariable=bot1_no_of_levels, bg='#FFFFFF', fg='#000000')
+profit_target_bot1_label = tk.Label(window, text="Profit Target", bg='#2C3E50', fg='#ECF0F1')
+profit_target_bot1_entry = tk.Entry(window, textvariable=bot1_profit_target, bg='#FFFFFF', fg='#000000')
+bot1_run_button = tk.Button(window, text="Run Bot 1", command=run_bot1, bg='#1ABC9C', fg='#FFFFFF')
 
+# Bot 2 Section
+symbol_bot2_label = tk.Label(window, text="Symbol", bg='#2C3E50', fg='#ECF0F1')
+symbol_bot2_entry = tk.Entry(window, textvariable=bot2_symbol, bg='#FFFFFF', fg='#000000')
+volume_bot2_label = tk.Label(window, text="Volume", bg='#2C3E50', fg='#ECF0F1')
+volume_bot2_entry = tk.Entry(window, textvariable=bot2_volume, bg='#FFFFFF', fg='#000000')
+no_of_level_bot2_label = tk.Label(window, text="No Of Levels", bg='#2C3E50', fg='#ECF0F1')
+no_of_level_bot2_entry = tk.Entry(window, textvariable=bot2_no_of_levels, bg='#FFFFFF', fg='#000000')
+profit_target_bot2_label = tk.Label(window, text="Profit Target", bg='#2C3E50', fg='#ECF0F1')
+profit_target_bot2_entry = tk.Entry(window, textvariable=bot2_profit_target, bg='#FFFFFF', fg='#000000')
+bot2_run_button = tk.Button(window, text="Run Bot 2", command=run_bot2, bg='#1ABC9C', fg='#FFFFFF')
+
+# Bot 3 Section
+symbol_bot3_label = tk.Label(window, text="Symbol", bg='#2C3E50', fg='#ECF0F1')
+symbol_bot3_entry = tk.Entry(window, textvariable=bot3_symbol, bg='#FFFFFF', fg='#000000')
+volume_bot3_label = tk.Label(window, text="Volume", bg='#2C3E50', fg='#ECF0F1')
+volume_bot3_entry = tk.Entry(window, textvariable=bot3_volume, bg='#FFFFFF', fg='#000000')
+no_of_level_bot3_label = tk.Label(window, text="No Of Levels", bg='#2C3E50', fg='#ECF0F1')
+no_of_level_bot3_entry = tk.Entry(window, textvariable=bot3_no_of_levels, bg='#FFFFFF', fg='#000000')
+profit_target_bot3_label = tk.Label(window, text="Profit Target", bg='#2C3E50', fg='#ECF0F1')
+profit_target_bot3_entry = tk.Entry(window, textvariable=bot3_profit_target, bg='#FFFFFF', fg='#000000')
+bot3_run_button = tk.Button(window, text="Run Bot 3", command=run_bot3, bg='#1ABC9C', fg='#FFFFFF')
+
+
+# --------------------------------------------------------------------------------------
 
 # Login Section
 login_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
