@@ -2,6 +2,7 @@ import MetaTrader5 as mt5
 from classes import Bot
 from threading import Thread
 import os
+from PIL import Image, ImageTk 
 import tkinter as tk
 # print(tk.TkVersion)
 
@@ -27,10 +28,10 @@ window.configure(bg='black')
 window.resizable(False, False)
 window.geometry("450x750")
 
-
-icon_path = os.path.abspath("./icon.png")
-icon = tk.PhotoImage(file=icon_path)
+img = Image.open("icon.jpeg")  # Use your existing JPEG
+icon = ImageTk.PhotoImage(img)
 window.iconphoto(False, icon)
+
 
 def b1():
     bot1.run()
