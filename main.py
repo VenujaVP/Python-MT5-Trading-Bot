@@ -1,6 +1,8 @@
 import MetaTrader5 as mt5
 from classes import Bot
 from threading import Thread
+import tkinter as tk
+# print(tk.TkVersion)
 
 
 # Initialize MT5 properly
@@ -18,6 +20,12 @@ bot3 = Bot('USDCAD', 0.01, 10, 1)
 # bot2.run()
 # bot3.run()
 
+window = tk.Tk()
+window.title("Trading Bot")
+window.configure(bg='black')
+window.resizable(False, False)
+window.geometry("400x300")
+
 def b1():
     bot1.run()
 
@@ -32,7 +40,9 @@ thread1 = Thread(target=b1)
 thread2 = Thread(target=b2)
 thread3 = Thread(target=b3)
 
-thread1.start()
-thread2.start()
-thread3.start()
+# thread1.start()
+# thread2.start()
+# thread3.start()
+
+window.mainloop()
 
