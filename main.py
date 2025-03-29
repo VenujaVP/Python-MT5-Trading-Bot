@@ -32,6 +32,37 @@ img = Image.open("icon.jpeg")  # Use your existing JPEG
 icon = ImageTk.PhotoImage(img)
 window.iconphoto(False, icon)
 
+login_var = tk.StringVar()
+password_var = tk.StringVar()
+server_var = tk.StringVar()
+
+bot1_symbol = tk.StringVar()
+bot1_volume = tk.StringVar()
+bot1_no_of_levels = tk.StringVar()
+bot1_profit_target = tk.StringVar()
+
+bot2_symbol = tk.StringVar()
+bot2_volume = tk.StringVar()
+bot2_no_of_levels = tk.StringVar()
+bot2_profit_target = tk.StringVar()
+
+bot3_symbol = tk.StringVar()
+bot3_volume = tk.StringVar()
+bot3_no_of_levels = tk.StringVar()
+bot3_profit_target = tk.StringVar()
+
+def initialize(): 
+    login =int(login_var.get())
+    password = password_var.get()
+    server = server_var.get()
+
+def run_bot1():
+    symbol = bot1_symbol.get()
+    volume = float(bot1_volume.get())
+    no_of_levels = int(bot1_no_of_levels.get())
+    profit_target = float(bot1_profit_target.get())
+        
+        
 
 def b1():
     bot1.run()
