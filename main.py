@@ -24,7 +24,10 @@ window = tk.Tk()
 window.title("Trading Bot")
 window.configure(bg='black')
 window.resizable(False, False)
-window.geometry("400x300")
+window.geometry("450x750")
+
+icon = tk.PhotoImage(file="icon.png")
+window.iconphoto(False, icon)
 
 def b1():
     bot1.run()
