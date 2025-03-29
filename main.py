@@ -37,7 +37,7 @@ window = tk.Tk()
 window.title("Trading Bot")
 window.configure(bg='#2C3E50')
 window.resizable(False, False)
-window.geometry("450x750")
+window.geometry("450x700")
 
 img = Image.open("icon.jpeg")  # Use your existing JPEG
 icon = ImageTk.PhotoImage(img)
@@ -110,6 +110,7 @@ password_entry = tk.Entry(window, textvariable=password_var, bg='#FFFFFF', fg='#
 server_label = tk.Label(window, text="Server", bg='#2C3E50', fg='#ECF0F1')
 server_entry = tk.Entry(window, textvariable=server_var, bg='#FFFFFF', fg='#000000')
 initialize_button = tk.Button(window, text="Initialize", command=initialize, bg='#1ABC9C', fg='#FFFFFF')
+seperator1 = tk.Label(window, text="----------------------------------------------", bg='#2C3E50', fg='#ECF0F1')
 
 # Bot 1 Section
 symbol_bot1_label = tk.Label(window, text="Symbol", bg='#2C3E50', fg='#ECF0F1')
@@ -155,7 +156,8 @@ password_entry.grid(row=1, column=1, padx=10, pady=10)
 server_label.grid(row=2, column=0, sticky="e", padx=10, pady=10)
 server_entry.grid(row=2, column=1, padx=10, pady=10)
 # Centered Initialize Button
-initialize_button.grid(row=3, column=0, columnspan=2, pady=15)
+initialize_button.grid(row=3, column=2, columnspan=2, pady=15)
+
 
 # Bot 1 Section
 symbol_bot1_label.grid(row=4, column=0, sticky="e", padx=10, pady=5)
@@ -166,7 +168,7 @@ no_of_level_bot1_label.grid(row=6, column=0, sticky="e", padx=10, pady=5)
 no_of_level_bot1_entry.grid(row=6, column=1, padx=10, pady=5)
 profit_target_bot1_label.grid(row=7, column=0, sticky="e", padx=10, pady=5)
 profit_target_bot1_entry.grid(row=7, column=1, padx=10, pady=5)
-bot1_run_button.grid(row=8, column=0, columnspan=2, pady=10)
+bot1_run_button.grid(row=8, column=2, columnspan=2, pady=10)
 
 # Bot 2 Section
 symbol_bot2_label.grid(row=9, column=0, sticky="e", padx=10, pady=5)
@@ -177,7 +179,7 @@ no_of_level_bot2_label.grid(row=11, column=0, sticky="e", padx=10, pady=5)
 no_of_level_bot2_entry.grid(row=11, column=1, padx=10, pady=5)
 profit_target_bot2_label.grid(row=12, column=0, sticky="e", padx=10, pady=5)
 profit_target_bot2_entry.grid(row=12, column=1, padx=10, pady=5)
-bot2_run_button.grid(row=13, column=0, columnspan=2, pady=10)
+bot2_run_button.grid(row=13, column=2, columnspan=2, pady=10)
 
 # Bot 3 Section
 symbol_bot3_label.grid(row=14, column=0, sticky="e", padx=10, pady=5)
@@ -188,7 +190,7 @@ no_of_level_bot3_label.grid(row=16, column=0, sticky="e", padx=10, pady=5)
 no_of_level_bot3_entry.grid(row=16, column=1, padx=10, pady=5)
 profit_target_bot3_label.grid(row=17, column=0, sticky="e", padx=10, pady=5)
 profit_target_bot3_entry.grid(row=17, column=1, padx=10, pady=5)
-bot3_run_button.grid(row=18, column=0, columnspan=2, pady=10)
+bot3_run_button.grid(row=18, column=2, columnspan=2, pady=10)
 
 window.mainloop()
 
