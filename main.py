@@ -1,6 +1,7 @@
 import MetaTrader5 as mt5
 from classes import Bot
 from threading import Thread
+import os
 import tkinter as tk
 # print(tk.TkVersion)
 
@@ -26,7 +27,9 @@ window.configure(bg='black')
 window.resizable(False, False)
 window.geometry("450x750")
 
-icon = tk.PhotoImage(file="icon.png")
+
+icon_path = os.path.abspath("./icon.png")
+icon = tk.PhotoImage(file=icon_path)
 window.iconphoto(False, icon)
 
 def b1():
