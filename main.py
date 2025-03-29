@@ -141,15 +141,48 @@ profit_target_bot3_entry = tk.Entry(window, textvariable=bot3_profit_target, bg=
 bot3_run_button = tk.Button(window, text="Run Bot 3", command=run_bot3, bg='black', fg='white')
 
 
-login_label.grid(row=0, column=0, padx=10, pady=10)
-login_entry.grid(row=0, column=1, padx=10, pady=5)
-password_label.grid(row=1, column=0, padx=10, pady=5)
-password_entry.grid(row=1, column=1, padx=10, pady=5)
-server_entry.grid(row=2, column=1, padx=10, pady=5)
-server_label.grid(row=2, column=0, padx=10, pady=5)
-initialize_button.grid(row=1, column=0, padx=10, padx=10, pady=5)
-#bot1
+# Login Section
+login_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
+login_entry.grid(row=0, column=1, padx=10, pady=10)
+password_label.grid(row=1, column=0, sticky="e", padx=10, pady=10)
+password_entry.grid(row=1, column=1, padx=10, pady=10)
+server_label.grid(row=2, column=0, sticky="e", padx=10, pady=10)
+server_entry.grid(row=2, column=1, padx=10, pady=10)
+# Centered Initialize Button
+initialize_button.grid(row=3, column=0, columnspan=2, pady=15)
 
+# Bot 1 Section
+symbol_bot1_label.grid(row=4, column=0, sticky="e", padx=10, pady=5)
+symbol_bot1_entry.grid(row=4, column=1, padx=10, pady=5)
+volume_bot1_label.grid(row=5, column=0, sticky="e", padx=10, pady=5)
+volume_bot1_entry.grid(row=5, column=1, padx=10, pady=5)
+no_of_level_bot1_label.grid(row=6, column=0, sticky="e", padx=10, pady=5)
+no_of_level_bot1_entry.grid(row=6, column=1, padx=10, pady=5)
+profit_target_bot1_label.grid(row=7, column=0, sticky="e", padx=10, pady=5)
+profit_target_bot1_entry.grid(row=7, column=1, padx=10, pady=5)
+bot1_run_button.grid(row=8, column=0, columnspan=2, pady=10)
+
+# Bot 2 Section
+symbol_bot2_label.grid(row=9, column=0, sticky="e", padx=10, pady=5)
+symbol_bot2_entry.grid(row=9, column=1, padx=10, pady=5)
+volume_bot2_label.grid(row=10, column=0, sticky="e", padx=10, pady=5)
+volume_bot2_entry.grid(row=10, column=1, padx=10, pady=5)
+no_of_level_bot2_label.grid(row=11, column=0, sticky="e", padx=10, pady=5)
+no_of_level_bot2_entry.grid(row=11, column=1, padx=10, pady=5)
+profit_target_bot2_label.grid(row=12, column=0, sticky="e", padx=10, pady=5)
+profit_target_bot2_entry.grid(row=12, column=1, padx=10, pady=5)
+bot2_run_button.grid(row=13, column=0, columnspan=2, pady=10)
+
+# Bot 3 Section
+symbol_bot3_label.grid(row=14, column=0, sticky="e", padx=10, pady=5)
+symbol_bot3_entry.grid(row=14, column=1, padx=10, pady=5)
+volume_bot3_label.grid(row=15, column=0, sticky="e", padx=10, pady=5)
+volume_bot3_entry.grid(row=15, column=1, padx=10, pady=5)
+no_of_level_bot3_label.grid(row=16, column=0, sticky="e", padx=10, pady=5)
+no_of_level_bot3_entry.grid(row=16, column=1, padx=10, pady=5)
+profit_target_bot3_label.grid(row=17, column=0, sticky="e", padx=10, pady=5)
+profit_target_bot3_entry.grid(row=17, column=1, padx=10, pady=5)
+bot3_run_button.grid(row=18, column=0, columnspan=2, pady=10)
 
 window.mainloop()
 
