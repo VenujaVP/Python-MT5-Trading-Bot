@@ -195,33 +195,33 @@ class Bot:
             pct_change_buy = pct_change_buy - 1
 
 
-def run(self):
-    while True:
-        self.drow_grid(self.symbol, self.volume, self.no_of_levels)
+    def run(self):
         while True:
-            positions = mt5.positions_get(symbol=self.symbol)
-
-            # Check if there are any open positions
-            if len(positions) > 0:
-                margin_s = self.cal_sell_margin(self.symbol)
-                margin_b = self.cal_buy_margin(self.symbol)
-
-                if margin_s > 0:
-                    pct_profit_sell = self.cal_sell_pct_profit(self.symbol)
-                    if pct_profit_sell >= self.profit_target:
-                        self.close_all(self.symbol)
-                        print("Sell positions closed")
-
-                # Check if there are active buy positions
-                if margin_b > 0:
-                    pct_profit_buy = self.cal_buy_pct_profit(self.symbol)
-                    if pct_profit_buy >= self.profit_target:
-                        self.close_all(self.symbol)
-                        print("Buy positions closed")
-                
+            self.drow_grid(self.symbol, self.volume, self.no_of_levels)
+            while True:
                 positions = mt5.positions_get(symbol=self.symbol)
-                
-                if len(positions) == 0:
-                    self.close_all_pending(self.symbol)
-                    print("All positions closed")
-                    break  # Exit the loop
+
+                # Check if there are any open positions
+                if len(positions) > 0:
+                    margin_s = self.cal_sell_margin(self.symbol)
+                    margin_b = self.cal_buy_margin(self.symbol)
+
+                    if margin_s > 0:
+                        pct_profit_sell = self.cal_sell_pct_profit(self.symbol)
+                        if pct_profit_sell >= self.profit_target:
+                            self.close_all(self.symbol)
+                            print("Sell positions closed")
+
+                    # Check if there are active buy positions
+                    if margin_b > 0:
+                        pct_profit_buy = self.cal_buy_pct_profit(self.symbol)
+                        if pct_profit_buy >= self.profit_target:
+                            self.close_all(self.symbol)
+                            print("Buy positions closed")
+                    
+                    positions = mt5.positions_get(symbol=self.symbol)
+                    
+                    if len(positions) == 0:
+                        self.close_all_pending(self.symbol)
+                        print("All positions closed")
+                        break  # Exit the loop
